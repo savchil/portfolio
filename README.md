@@ -1,1 +1,532 @@
-# portfolio
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Savannah Childress - Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fafafa;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: #333;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #3498db;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: white;
+            padding: 120px 0 80px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+
+        .hero .subtitle {
+            font-size: 1.3rem;
+            color: #7f8c8d;
+            margin-bottom: 2rem;
+        }
+
+        .hero .description {
+            font-size: 1.1rem;
+            color: #555;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .contact-button {
+            display: inline-block;
+            background: #3498db;
+            color: white;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+
+        .contact-button:hover {
+            background: #2980b9;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 60px 0;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            margin-bottom: 3rem;
+            text-align: center;
+            color: #2c3e50;
+        }
+
+        /* Experience Section */
+        .experience {
+            background: white;
+        }
+
+        .job {
+            background: #f8f9fa;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            border-left: 4px solid #3498db;
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .job-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .job-company {
+            font-size: 1.1rem;
+            color: #3498db;
+            margin-bottom: 0.5rem;
+        }
+
+        .job-date {
+            color: #7f8c8d;
+            font-size: 0.9rem;
+        }
+
+        .job-description {
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .job-description ul {
+            margin-top: 1rem;
+            padding-left: 1.5rem;
+        }
+
+        .job-description li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Skills Section */
+        .skills {
+            background: #f8f9fa;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-category {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .skill-category h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .skill-tag {
+            background: #e3f2fd;
+            color: #1976d2;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        /* Education Section */
+        .education {
+            background: white;
+        }
+
+        .education-item {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #27ae60;
+        }
+
+        .education-degree {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+
+        .education-school {
+            color: #27ae60;
+            margin-bottom: 0.5rem;
+        }
+
+        .education-date {
+            color: #7f8c8d;
+            font-size: 0.9rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+        }
+
+        .contact .section-title {
+            color: white;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .contact-item a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .contact-item a:hover {
+            color: #3498db;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1.1rem;
+            }
+
+            .job-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">Savannah Childress</div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="about" class="hero">
+        <div class="container">
+            <h1>Savannah Childress</h1>
+            <p class="subtitle">Medical Laboratory Scientist & Data Science Graduate Student</p>
+            <p class="description">
+                Experienced Medical Laboratory Scientist with expertise in flow cytometry, molecular diagnostics, 
+                and statistical analysis. Currently pursuing Master's in Analytics at Georgia Tech with interests 
+                in data science, medical technology, and immunology. Passionate about contributing to innovative 
+                science and providing greater understanding about the world we live in.
+            </p>
+            <a href="#contact" class="contact-button">Get In Touch</a>
+        </div>
+    </section>
+
+    <section id="experience" class="experience">
+        <div class="container">
+            <h2 class="section-title">Work Experience</h2>
+            
+            <div class="job">
+                <div class="job-header">
+                    <div>
+                        <div class="job-title">Medical Laboratory Scientist</div>
+                        <div class="job-company">Baptist Health Medical Center</div>
+                    </div>
+                    <div class="job-date">2024 - 2025</div>
+                </div>
+                <div class="job-description">
+                    Specialized in flow cytometric analysis and hematopathology diagnostics.
+                    <ul>
+                        <li>Analyzed flow cytometric data and utilized statistical analysis to gate patient cell populations</li>
+                        <li>Prepared patient tissue, blood, and bone marrow samples for processing and analysis</li>
+                        <li>Collaborated with pathologists to identify optimal fluorochrome combinations for blood cancer diagnosis</li>
+                        <li>Implemented cell staining and lysing techniques with precision</li>
+                        <li>Performed routine instrument maintenance ensuring optimal performance</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="job">
+                <div class="job-header">
+                    <div>
+                        <div class="job-title">Medical Laboratory Scientist</div>
+                        <div class="job-company">University of Arkansas for Medical Sciences</div>
+                    </div>
+                    <div class="job-date">2022 - 2024</div>
+                </div>
+                <div class="job-description">
+                    Advanced molecular diagnostics and flow cytometry specialist in academic medical center.
+                    <ul>
+                        <li>Operated cell sorting and bead array analysis flow cytometers daily</li>
+                        <li>Performed DNA extraction, PCR, Next-Generation Sequencing, and Reverse SSO Assays</li>
+                        <li>Maintained sterile technique within laminar flow hood environments</li>
+                        <li>Executed microliter-volume pipetting with precision and maintained detailed records</li>
+                        <li>Troubleshot and optimized flow cytometer performance</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="job">
+                <div class="job-header">
+                    <div>
+                        <div class="job-title">Certified Pharmacy Technician</div>
+                        <div class="job-company">University of Arkansas for Medical Sciences</div>
+                    </div>
+                    <div class="job-date">2021 - 2022</div>
+                </div>
+                <div class="job-description">
+                    Hospital pharmacy technician specializing in sterile compounding and medication distribution.
+                    <ul>
+                        <li>Compounded IV medications in sterile environment using aseptic techniques</li>
+                        <li>Prepared and dispensed medications to all hospital units</li>
+                        <li>Collaborated with pharmacists and hospital staff to streamline medication distribution</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="job">
+                <div class="job-header">
+                    <div>
+                        <div class="job-title">Certified Pharmacy Technician</div>
+                        <div class="job-company">Walgreens</div>
+                    </div>
+                    <div class="job-date">2017 - 2021</div>
+                </div>
+                <div class="job-description">
+                    Retail pharmacy technician with extensive pharmaceutical knowledge and team collaboration experience.
+                    <ul>
+                        <li>Developed expertise in chemical structure and effects of pharmaceutical drugs</li>
+                        <li>Worked collaboratively in fast-paced retail pharmacy environment</li>
+                        <li>Completed 50 hours of extended learning through Pharmacy Technician Certification Board</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title">Skills</h2>
+            
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Laboratory Techniques</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Flow Cytometry</span>
+                        <span class="skill-tag">Cell Sorting</span>
+                        <span class="skill-tag">DNA Extraction</span>
+                        <span class="skill-tag">PCR</span>
+                        <span class="skill-tag">Next-Gen Sequencing</span>
+                        <span class="skill-tag">Cell Culture</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Data Analysis</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Statistical Analysis</span>
+                        <span class="skill-tag">Data Processing</span>
+                        <span class="skill-tag">Bead Array Analysis</span>
+                        <span class="skill-tag">Cell Population Gating</span>
+                        <span class="skill-tag">Data Science</span>
+                        <span class="skill-tag">Research Methods</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Medical & Pharmaceutical</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Hematopathology</span>
+                        <span class="skill-tag">Immunology</span>
+                        <span class="skill-tag">Sterile Compounding</span>
+                        <span class="skill-tag">Pharmaceutical Knowledge</span>
+                        <span class="skill-tag">Aseptic Technique</span>
+                        <span class="skill-tag">Medical Technology</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="education" class="education">
+        <div class="container">
+            <h2 class="section-title">Education</h2>
+            
+            <div class="education-item">
+                <div class="education-degree">Master of Science in Analytics</div>
+                <div class="education-school">Georgia Institute of Technology</div>
+                <div class="education-date">Expected 2027</div>
+            </div>
+            
+            <div class="education-item">
+                <div class="education-degree">Bachelor of Science in Biology</div>
+                <div class="education-school">University of Texas at Arlington</div>
+                <div class="education-date">2021</div>
+            </div>
+
+            <div class="education-item">
+                <div class="education-degree">Undergraduate Coursework in Biology</div>
+                <div class="education-school">Tarrant County College</div>
+                <div class="education-date">2017</div>
+            </div>
+
+            <div class="education-item">
+                <div class="education-degree">Pharmacy Technician Certification</div>
+                <div class="education-school">Pharmacy Technician Certification Board</div>
+                <div class="education-date">50 Hours Extended Learning</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Let's Connect</h2>
+            <p>I'm always interested in new opportunities and collaborations.</p>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span>📧</span>
+                    <a href="mailto:savbchil@gmail.com">savbchil@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    <span>📱</span>
+                    <a href="tel:+353083373184">+353 (083) 373 1841</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Header background change on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+                header.style.backdropFilter = 'blur(10px)';
+            } else {
+                header.style.background = 'white';
+                header.style.backdropFilter = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
